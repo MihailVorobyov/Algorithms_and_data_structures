@@ -7,9 +7,9 @@ public class FindMissedNumber {
 	public static void main(String[] args) {
 		int n = 1000; // Размер массива
 		int[] arr = initArray(n);
-//		int[] arr = new int[] {2, 3, 4, 5};
-//		int[] arr = new int[0];
-//		int[] arr = new int[] {1, 3, 4, 5, 6, 7, 8, 9, 10};
+//		int[] arr = new int[0]; // Проверка пустого массива (ожидается 1)
+// 		int[] arr = new int[] {1, 2, 3, 4, 5};  // Проверка массива без пропусков (ожидается 6)
+//		int[] arr = new int[] {1, 3, 4, 5, 6, 7, 8, 9, 10}; // Ожидается 2
 		
 		Arrays.stream(arr).forEach(i -> System.out.print(i + " "));
 		System.out.println("Пропущенное число: " + find(arr));
@@ -44,6 +44,8 @@ public class FindMissedNumber {
 		} else {
 			if (arr[0] != 1) {
 				return 1;
+			} else if (arr[arr.length - 1] == arr.length) {
+				return arr.length + 1;
 			}
 		}
 		
