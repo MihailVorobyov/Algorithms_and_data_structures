@@ -52,4 +52,8 @@ public class Node <T extends Comparable<? super T>> {
                 || leftChild != null && rightChild == null;*/
         return rightChild != null ^ leftChild != null;
     }
+    
+    void addOne() {
+        repeat++;
+    }
 }
